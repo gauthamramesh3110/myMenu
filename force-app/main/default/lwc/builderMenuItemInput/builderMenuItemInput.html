@@ -1,0 +1,40 @@
+<template>
+	<section aria-describedby="item-input-body-id" 
+		class="slds-popover slds-popover_full-width slds-nubbin_top-right" role="dialog">
+
+		<lightning-button-icon icon-name="utility:close" variant="container" aternative-text="Close" title="Close"
+			class="slds-popover__close slds-float_right"></lightning-button-icon>
+
+		<header class="slds-popover__header">
+			<h1 class="slds-text-heading_small" id="item-input-header-id">Enter Item Details</h1>
+		</header>
+
+		<div class="slds-popover__body" id="item-input-body-id">
+			<div class="slds-box slds-align_absolute-center">
+				<img src={menuItemImageSrc}/>
+				<lightning-file-upload
+					label="Upload Image"
+					name="menuItemImageUploader"
+					onuploadfinished={handleMenuItemImageUpload}
+				>
+				</lightning-file-upload>
+			</div>
+			<lightning-input type="text" label="Item Name"></lightning-input>
+			<lightning-textarea label="Item Ingredients"></lightning-textarea>
+			<lightning-input type="number" label="Item Price"></lightning-input>
+			<lightning-input type="number" label="Item Discount"></lightning-input>
+		</div>
+
+		<footer class="slds-popover__footer">
+			<lightning-layout>
+				<lightning-layout-item flexibility="auto"></lightning-layout-item>
+				<lightning-layout-item flexibility="auto, no-grow">
+					<lightning-button variant="brand-outline" label="Cancel" title="Cancel"></lightning-button>
+				</lightning-layout-item>
+				<lightning-layout-item flexibility="auto, no-grow">
+					<lightning-button variant="brand" label="Save" title="Save Item" class="slds-m-left_x-small"></lightning-button>
+				</lightning-layout-item>
+			</lightning-layout>
+		</footer>
+	</section>
+</template>

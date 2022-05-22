@@ -1,3 +1,18 @@
 <template>
-    
+    <lightning-card  title="Library">
+        <lightning-layout class="slds-p-around_small">
+            <lightning-layout-item flexibility="auto" class="slds-m-right_small">
+                <lightning-input
+                    name="item-search"
+                    label="Search Items"
+                    type="search"
+                    variant="label-hidden"
+                ></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto, no-grow">
+                <lightning-button-icon icon-name="utility:add" variant="brand" alternative-text="Add Item"></lightning-button-icon>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    <c-builder-menu-item-input></c-builder-menu-item-input>
 </template>
